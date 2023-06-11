@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+# SCSS File Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This package provides a utility function to generate SCSS files with customizable options. It allows you to create SCSS files with different names, save locations, and module configurations.
 
-## Available Scripts
+## Usage
 
-In the project directory, you can run:
+You can generate an SCSS file by calling the `generateScssFile` function with the desired options.
 
-### `npm start`
+## Example
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```javascript
+import generateScssFile from "path/to/scssGenerator";
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+generateScssFile({
+  name: "Test",
+  saveTo: "src",
+  asModule: true,
+});
+```
 
-### `npm test`
+The `options` object passed to the `generateScssFile` function should have the following properties:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `name` (string): The name of the SCSS file (without the extension).
+- `saveTo` (string): The directory where the SCSS file should be saved.
+- `asModule` (boolean): Set to `true` if the SCSS file should be generated as a module (`.module.scss`), or `false` for a regular SCSS file (`.scss`).
 
-### `npm run build`
+Upon successful generation of the SCSS file, a success message will be displayed in the console, indicating the file name and its generated location.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Requirements
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This package has the following dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `@mongez/fs`: File system utilities for file manipulation.
+- `chalk`: A library for colorful console output.
+- `path`: A module for working with file paths.
 
-### `npm run eject`
+Please make sure these dependencies are installed and accessible within your project.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Contributing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contributions are welcome! If you have any suggestions, bug fixes, or improvements, please feel free to open an issue or submit a pull request on the GitHub repository.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This package is licensed under the [MIT LICENSE](https://en.wikipedia.org/wiki/MIT_License).
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can copy and paste this Markdown code into your README.md file.
